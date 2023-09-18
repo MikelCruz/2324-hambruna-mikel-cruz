@@ -25,9 +25,10 @@ const fetchAsyncDonuts = async() => {
 
         //parte 3
         // showDonutsBatter        (allDonuts);
-        showDonutsExtraToppings (allDonuts);
+        // showDonutsExtraToppings (allDonuts);
 
-
+        //parte 4
+        
 
     } catch (error){
         console.log(error.message)
