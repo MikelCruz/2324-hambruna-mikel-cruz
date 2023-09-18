@@ -13,7 +13,7 @@ const fetchAsyncDonuts = async() => {
         // showTheHighestSugarDonut    (allDonuts);
         // showTheHighestIronDonut     (allDonuts);
         // showTheHighestProteinDonut  (allDonuts);
-        showTheHighestFibreDonut    (allDonuts);
+        // showTheHighestFibreDonut    (allDonuts);
 
     } catch (error){
         console.log(error.message)
@@ -135,7 +135,7 @@ function showTheHighestFibreDonut(allDonuts)
       
         return 0;
       });
-      
+
 
     let maxArrLenght = fibreValuesArray.length - 2;
 
