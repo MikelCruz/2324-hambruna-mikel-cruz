@@ -17,7 +17,7 @@ const fetchAsyncDonuts = async() => {
         // showTheHighestFibreDonut    (allDonuts);
 
         //Parte 2
-        showAllDonutsAndCalories(allDonuts);
+        showAllDonutsAndCarbs(allDonuts);
 
 
     } catch (error){
@@ -160,7 +160,7 @@ function reOrderMaxToMin(array)
 
 
 
-function showAllDonutsAndCalories (allDonuts)
+function showAllDonutsAndCarbs (allDonuts)
 {
     console.log("Donuts Names: ")
     allDonuts.forEach((element) => {
