@@ -11,24 +11,26 @@ const fetchAsyncDonuts = async() => {
         const allDonuts = getResult.items.item
 
         //Parte 1
-        // showTheHighestSugarDonut    (allDonuts);
-        // showTheHighestIronDonut     (allDonuts);
-        // showTheHighestProteinDonut  (allDonuts);
-        // showTheHighestFibreDonut    (allDonuts);
+        // showTheHighestSugarDonut             (allDonuts);
+        // showTheHighestIronDonut              (allDonuts);
+        // showTheHighestProteinDonut           (allDonuts);
+        // showTheHighestFibreDonut             (allDonuts);
 
         //Parte 2
-        // showAllDonutsAndCalories        (allDonuts);
-        // showAllDonutsAndCarbs           (allDonuts);
-        // showDonutCaloriesAverage        (allDonuts);
-        // showDonutsAllSaturatedFat       (allDonuts);
-        // showDonutsVitamineAverage       (allDonuts);
+        // showAllDonutsAndCalories             (allDonuts);
+        // showAllDonutsAndCarbs                (allDonuts);
+        // showDonutCaloriesAverage             (allDonuts);
+        // showDonutsAllSaturatedFat            (allDonuts);
+        // showDonutsVitamineAverage            (allDonuts);
 
         //parte 3
-        // showDonutsBatter        (allDonuts);
-        // showDonutsExtraToppings (allDonuts);
+        // showDonutsBatter                     (allDonuts);
+        // showDonutsExtraToppings              (allDonuts);
 
         //parte 4
-        
+        showHowManyTypeOfDonutsCanWeBuy         (allDonuts)
+
+        //Parte 5 
 
     } catch (error){
         console.log(error.message)
@@ -259,4 +261,10 @@ function showDonutsExtraToppings(allDonuts)
         
         console.log("======================");
     })
+}
+
+
+function showHowManyTypeOfDonutsCanWeBuy(allDonuts)
+{
+
 }
