@@ -10,10 +10,15 @@ const fetchAsyncDonuts = async() => {
         const getResult = await getAllDonuts()
         const allDonuts = getResult.items.item
 
+        //Parte 1
         // showTheHighestSugarDonut    (allDonuts);
         // showTheHighestIronDonut     (allDonuts);
         // showTheHighestProteinDonut  (allDonuts);
         // showTheHighestFibreDonut    (allDonuts);
+
+        //Parte 2
+        showAllDonutsAndCalories(allDonuts);
+
 
     } catch (error){
         console.log(error.message)
@@ -151,4 +156,16 @@ function showTheHighestFibreDonut(allDonuts)
 function reOrderMaxToMin(array)
 {
     array.sort((a, b) => a - b)
+}
+
+
+
+function showAllDonutsAndCalories (allDonuts)
+{
+    console.log("Donuts Names: ")
+    allDonuts.forEach((element) => {
+        console.log(element.name + ", carbs: " + element.nutrition_facts.nutrition.carbohydrate.carbs_detail.amount);
+    })
+    
+
 }
