@@ -12,7 +12,8 @@ const fetchAsyncDonuts = async() => {
 
         // showTheHighestSugarDonut    (allDonuts);
         // showTheHighestIronDonut     (allDonuts);
-        showTheHighestProteinDonut  (allDonuts);
+        // showTheHighestProteinDonut  (allDonuts);
+        showTheHighestFibreDonut    (allDonuts);
 
     } catch (error){
         console.log(error.message)
@@ -115,9 +116,35 @@ function showTheHighestProteinDonut(allDonuts)
     console.log("El donut con más proteina es: " + resultado[0].name);
 }
 
-function showTheHighestFibreDonut()
+function showTheHighestFibreDonut(allDonuts)
 {
+    const fibreValuesArray = [];
 
+    allDonuts.forEach((element) =>{
+        let fibreValue    = element.nutrition_facts.nutrition.carbohydrate.carbs_detail.type.fibre
+        fibreValuesArray.push(fibreValue);
+    });
+
+    fibreValuesArray.sort((a,b) =>{
+        if (a < b) 
+          return 1;
+        
+        if (a > b )
+          return -1;
+      
+      
+        return 0;
+      });
+      
+
+    let maxArrLenght = fibreValuesArray.length - 2;
+
+    let resultado = allDonuts.filter((element) => {
+        if (element.nutrition_facts.nutrition.carbohydrate.carbs_detail.type.fibre === fibreValuesArray[maxArrLenght])
+            return element.name;
+    });
+
+    console.log("El donut con más fibra es: " + resultado[0].name);
 }
 
 
