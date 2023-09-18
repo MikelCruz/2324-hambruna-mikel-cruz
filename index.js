@@ -20,7 +20,8 @@ const fetchAsyncDonuts = async() => {
         // showAllDonutsAndCalories        (allDonuts);
         // showAllDonutsAndCarbs           (allDonuts);
         // showDonutCaloriesAverage        (allDonuts);
-        showDonutsAllSaturatedFat       (allDonuts);
+        // showDonutsAllSaturatedFat       (allDonuts);
+        showDonutsVitamineAverage       (allDonuts);
 
     } catch (error){
         console.log(error.message)
@@ -196,10 +197,26 @@ function showDonutCaloriesAverage(allDonuts)
 function showDonutsAllSaturatedFat(allDonuts)
 {
     let result = 0;
-    
+
     allDonuts.forEach((element) => {
       result += parseInt(element.nutrition_facts.nutrition.fat.fat_type.saturated);
     })
 
     console.log("La Suma de todas las grasasa saturadas es de: " + result);
+}
+
+function showDonutsVitamineAverage(allDonuts)
+{
+    const vitaminesA    = 0;
+    const vitaminesC    = 1;
+
+    let resultVitamin   = 0;
+
+    allDonuts.forEach((element) => {
+        resultVitamin   += parseInt(element.nutrition_facts.nutrition.vitamines[vitaminesA].percent);
+        resultVitamin   += parseInt(element.nutrition_facts.nutrition.vitamines[vitaminesC].percent);
+    })
+
+
+    console.log("La Media de vitaminas es de: " + (resultVitamin /(allDonuts.length*2)));
 }
