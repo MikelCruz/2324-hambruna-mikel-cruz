@@ -11,7 +11,8 @@ const fetchAsyncDonuts = async() => {
         const allDonuts = getResult.items.item
 
         // showTheHighestSugarDonut    (allDonuts);
-        showTheHighestIronDonut     (allDonuts);
+        // showTheHighestIronDonut     (allDonuts);
+        showTheHighestProteinDonut  (allDonuts);
 
     } catch (error){
         console.log(error.message)
@@ -91,9 +92,27 @@ function showTheHighestIronDonut(allDonuts)
     console.log("El donut con más hierro es: " + resultado[0].name);
 }
 
-function showTheHighestProteinDonut()
+function showTheHighestProteinDonut(allDonuts)
 {
+    const proteineValuesArray = [];
 
+    allDonuts.forEach((element) =>{
+        let proteineValue    = element.nutrition_facts.nutrition.proteine
+        proteineValuesArray.push(proteineValue);
+    });
+
+    console.log(proteineValuesArray);
+
+    reOrderMaxToMin(proteineValuesArray);
+
+    let maxArrLenght = proteineValuesArray.length
+
+    let resultado = allDonuts.filter((element) => {
+        if (element.nutrition_facts.nutrition.proteine === proteineValuesArray[maxArrLenght-1])
+            return element.name;
+    });
+
+    console.log("El donut con más proteina es: " + resultado[0].name);
 }
 
 function showTheHighestFibreDonut()
