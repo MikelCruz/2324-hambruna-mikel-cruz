@@ -19,7 +19,8 @@ const fetchAsyncDonuts = async() => {
         //Parte 2
         // showAllDonutsAndCalories        (allDonuts);
         // showAllDonutsAndCarbs           (allDonuts);
-        showDonutCaloriesAverage        (allDonuts);
+        // showDonutCaloriesAverage        (allDonuts);
+        showDonutsAllSaturatedFat       (allDonuts);
 
     } catch (error){
         console.log(error.message)
@@ -189,4 +190,16 @@ function showDonutCaloriesAverage(allDonuts)
     })
 
     console.log("Media de calorias es: " + (result/allDonuts.length));
+}
+
+
+function showDonutsAllSaturatedFat(allDonuts)
+{
+    let result = 0;
+    
+    allDonuts.forEach((element) => {
+      result += parseInt(element.nutrition_facts.nutrition.fat.fat_type.saturated);
+    })
+
+    console.log("La Suma de todas las grasasa saturadas es de: " + result);
 }
