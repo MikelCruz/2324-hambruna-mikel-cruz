@@ -17,7 +17,8 @@ const fetchAsyncDonuts = async() => {
         // showTheHighestFibreDonut    (allDonuts);
 
         //Parte 2
-        showAllDonutsAndCarbs(allDonuts);
+        showAllDonutsAndCalories        (allDonuts);
+        // showAllDonutsAndCarbs           (allDonuts);
 
 
     } catch (error){
@@ -165,6 +166,16 @@ function showAllDonutsAndCarbs (allDonuts)
     console.log("Donuts Names: ")
     allDonuts.forEach((element) => {
         console.log(element.name + ", carbs: " + element.nutrition_facts.nutrition.carbohydrate.carbs_detail.amount);
+    })
+    
+
+}
+
+function showAllDonutsAndCalories (allDonuts)
+{
+    console.log("Donuts Names: ")
+    allDonuts.forEach((element) => {
+        console.log(element.name + ", calories: " + element.nutrition_facts.nutrition.calories);
     })
     
 
