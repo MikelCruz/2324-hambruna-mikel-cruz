@@ -21,7 +21,9 @@ const fetchAsyncDonuts = async() => {
         // showAllDonutsAndCarbs           (allDonuts);
         // showDonutCaloriesAverage        (allDonuts);
         // showDonutsAllSaturatedFat       (allDonuts);
-        showDonutsVitamineAverage       (allDonuts);
+        // showDonutsVitamineAverage       (allDonuts);
+
+        //parte 3
 
     } catch (error){
         console.log(error.message)
