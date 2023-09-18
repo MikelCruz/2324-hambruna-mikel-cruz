@@ -266,8 +266,6 @@ function showDonutsExtraToppings(allDonuts)
 
 function showHowManyTypeOfDonutsCanWeBuy(allDonuts)
 {
-    let cuantityResult = 0;
-
     allDonuts.forEach((element) => {
         console.log("Con el " + element.name + " Donut puedes comprar: " + Math.floor((4 / element.ppu)));
         });
