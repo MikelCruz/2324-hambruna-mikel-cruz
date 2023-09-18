@@ -24,6 +24,9 @@ const fetchAsyncDonuts = async() => {
         // showDonutsVitamineAverage       (allDonuts);
 
         //parte 3
+        showDonutsBatter        (allDonuts);
+
+
 
     } catch (error){
         console.log(error.message)
@@ -221,4 +224,20 @@ function showDonutsVitamineAverage(allDonuts)
 
 
     console.log("La Media de vitaminas es de: " + (resultVitamin /(allDonuts.length*2)));
+}
+
+function showDonutsBatter(allDonuts)
+{
+    console.log("======================");
+    
+    allDonuts.forEach((element) => {
+        console.log("Donuts Names: " + element.name + " | Batters: ");
+        let Batters = element.batters.batter
+
+        Batters.forEach((element2) => {
+            console.log(element2.type);
+        });
+        
+        console.log("======================");
+    })
 }
