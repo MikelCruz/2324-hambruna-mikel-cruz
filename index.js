@@ -10,8 +10,8 @@ const fetchAsyncDonuts = async() => {
         const getResult = await getAllDonuts()
         const allDonuts = getResult.items.item
 
-        showTheHighestSugarDonut(allDonuts);
-
+        // showTheHighestSugarDonut    (allDonuts);
+        showTheHighestIronDonut     (allDonuts);
 
     } catch (error){
         console.log(error.message)
@@ -63,4 +63,46 @@ function showTheHighestSugarDonut(allDonuts)
     console.log("El donut con más azucar es: " + resultado[0].name);
 
 
+}
+
+function showTheHighestIronDonut(allDonuts)
+{
+    //Creo array para meter todos los datos del Hierro
+    const ironValuesArray = [];
+
+    //Guardo todos los datos del hierro
+    allDonuts.forEach((element) =>{
+        let ironValue    = element.nutrition_facts.nutrition.vitamines[3].percent
+        ironValuesArray.push(ironValue);
+
+    });
+
+    //Reordeno los datos del array de hierro
+    reOrderMaxToMin(ironValuesArray);
+    let maxArrLenght = ironValuesArray.length
+
+    //Una vez tenemos el array ordenado cogemos el valor max del array y hacemos un map Filter para buscar esa cantidad de hierro y sacar el nombre 
+    let resultado = allDonuts.filter((element) => {
+        if (element.nutrition_facts.nutrition.vitamines[3].percent === ironValuesArray[maxArrLenght-1])
+            return element.name;
+    });
+
+    //mostramos el resultado 
+    console.log("El donut con más hierro es: " + resultado[0].name);
+}
+
+function showTheHighestProteinDonut()
+{
+
+}
+
+function showTheHighestFibreDonut()
+{
+
+}
+
+
+function reOrderMaxToMin(array)
+{
+    array.sort((a, b) => a - b)
 }
