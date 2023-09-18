@@ -17,9 +17,9 @@ const fetchAsyncDonuts = async() => {
         // showTheHighestFibreDonut    (allDonuts);
 
         //Parte 2
-        showAllDonutsAndCalories        (allDonuts);
+        // showAllDonutsAndCalories        (allDonuts);
         // showAllDonutsAndCarbs           (allDonuts);
-
+        showDonutCaloriesAverage        (allDonuts);
 
     } catch (error){
         console.log(error.message)
@@ -179,4 +179,14 @@ function showAllDonutsAndCalories (allDonuts)
     })
     
 
+}
+
+function showDonutCaloriesAverage(allDonuts)
+{
+    let result = 0;
+    allDonuts.forEach((element) => {
+       result += element.nutrition_facts.nutrition.calories
+    })
+
+    console.log("Media de calorias es: " + (result/allDonuts.length));
 }
