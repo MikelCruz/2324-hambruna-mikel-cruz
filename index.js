@@ -24,7 +24,8 @@ const fetchAsyncDonuts = async() => {
         // showDonutsVitamineAverage       (allDonuts);
 
         //parte 3
-        showDonutsBatter        (allDonuts);
+        // showDonutsBatter        (allDonuts);
+        showDonutsExtraToppings (allDonuts);
 
 
 
@@ -236,6 +237,23 @@ function showDonutsBatter(allDonuts)
 
         Batters.forEach((element2) => {
             console.log(element2.type);
+        });
+        
+        console.log("======================");
+    })
+}
+
+function showDonutsExtraToppings(allDonuts)
+{
+    console.log("======================");
+    
+    allDonuts.forEach((element) => {
+        console.log("Donuts Names: " + element.name + " | Toppings: ");
+        let Toppings = element.topping
+
+        Toppings.forEach((element2) => {
+            if (element2.type !== "None")
+                console.log(element2.type);
         });
         
         console.log("======================");
